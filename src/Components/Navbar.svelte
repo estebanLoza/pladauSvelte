@@ -6,6 +6,9 @@
     export let menu = 1;
     import Inicio from "../lib/Inicio.svelte";
     import Nosotros from "../lib/Nosotros.svelte";
+    import Facultades from "../lib/Facultades.svelte";
+    import InicioSesion from "../lib/InicioSesion.svelte";
+    import Registrarse from '../lib/Registrarse.svelte';
 </script>
 
 <header>
@@ -22,17 +25,26 @@
     </ul>
   </nav>
 </header>
+
+
+<!--?Codigo para el NavBar-->
 {#if menu === 1}
   <Inicio />
 {:else if menu === 2}
   <Nosotros />
+{:else if menu === 3}
+  <Facultades />
+{:else if menu === 4}
+  <InicioSesion />
+{:else if menu === 5}
+  <Registrarse />
 {/if}
 
 
 <style>
   header{
     width: 100%;
-    height: 5.625rem;
+    height: 6rem;
     background-color:#6E98D8;
   }
   
@@ -46,31 +58,46 @@
   
   /*CAJA DEL LOGO*/
   nav div{
-    border:1px solid red;
     margin-left: 2%;
   }
   
   
-  nav ul {
-    border: 0.5px solid green;
+  #menu {
+    width: 50%;
     display: flex;
     justify-content: flex-end;
-    gap:5%;
+    gap:1%;
     margin-right: 3%;
   }
   
-  nav ul li{
+  #menu li{
     list-style: none;
   }
+
+  #menu li:nth-child(5){
+    background-color: white; 
+    border-radius: 0.3em;
+    padding:0.2rem;
+  }
+
+  #menu li:nth-child(5) a{ /**nth-child, solo funciona con hijos directos de su padre (en este caso ul)*/
+    color: black;
+  }
+
   
-  nav ul a{
+  #menu li a{
     font-family: kodchasan;
     text-decoration:none;
     color: white;
-    padding: 15%;
+    padding: 0.2rem;
+    font-size: 120%;
+    font-weight: 700;
+
   }
-  nav ul a:hover{
+
+  #menu li:not(:nth-child(5)) a:hover {
     background-color: green;
-    border-radius: 15%;
+    border-radius: 0.3em;
   }
+
 </style>

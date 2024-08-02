@@ -2,6 +2,7 @@
   //importacion de imagenes
   
   import Bienvenida from "../img/Rectangle 3.png";
+  import GrupoEstudiantes from "../img/Rectangle 6.png";
 </script>
 
 
@@ -38,9 +39,18 @@
 
 <main>
   <section>
-    <div>
-      
+    <div id="textoInfo">
+      <p>
+        Te ayudaremos con el material necesario para que pases la materia, desde la facultad que estudias hasta los libros
+        y videos que usan los estudiantes de esa facultad.
+        Pero, si eres un estudiante de preparatoria, tambien veras lo que estudia un ingeniero electronico, abogado, etc.
+        Y así, sabras si realmente es lo que quieres.
+      </p>
     </div>
+
+    <figure>
+      <img src={GrupoEstudiantes} alt="Grupo de estudiantes Imagen ilustrativa">
+    </figure>
     
   </section>
 </main>
@@ -55,9 +65,35 @@
   
 }
 
-
-section{
-  height: 50vh;
+main{
+  height:50vh;
   width: 100%;
+}
+section{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#textoInfo{
+  background-color:#556E85;
+}
+
+#textoInfo p{
+  font-size: 1.4rem;
+  font-family: kodchasan;
+  color: white;
+  padding: 2.32rem;
+}
+
+figure{
+  height: 100%;
+  width: 50%;
+}
+figure img{
+  height: 100%;
+  object-fit: cover;
+  
+  
 }
 </style>
