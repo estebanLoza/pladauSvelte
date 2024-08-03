@@ -80,8 +80,15 @@
     padding:0.2rem;
   }
 
+
   #menu li:nth-child(5) a{ /**nth-child, solo funciona con hijos directos de su padre (en este caso ul)*/
     color: black;
+  }
+
+  #menu li:nth-child(5) a:hover{
+    background-color: black;
+    color: white;
+    width: 100%;
   }
 
   
