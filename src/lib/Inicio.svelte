@@ -48,7 +48,7 @@
       </p>
     </div>
 
-    <figure>
+    <figure style="width: 50%; height:100%;">
       <img src={GrupoEstudiantes} alt="Grupo de estudiantes Imagen ilustrativa">
     </figure>
     
@@ -77,6 +77,8 @@ section{
 
 #textoInfo{
   background-color:#556E85;
+  width: 50%;
+  height: 100%;
 }
 
 #textoInfo p{
@@ -86,14 +88,11 @@ section{
   padding: 2.32rem;
 }
 
-figure{
-  height: 100%;
-  width: 50%;
-}
+
 figure img{
   height: 100%;
+  width: 100%;
   object-fit: cover;
-  
   
 }
 </style>
