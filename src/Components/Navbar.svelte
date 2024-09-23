@@ -1,113 +1,93 @@
 <script>
-    //Importacion del logo de la empresa
-    import PLADAU from '../img/PLADAU.png';
-  
-      //variable para la navegacion y import de los componentes
-    export let menu = 1;
-    import Inicio from "../lib/Inicio.svelte";
-    import Nosotros from "../lib/Nosotros.svelte";
-    import Facultades from "../lib/Facultades.svelte";
-    import InicioSesion from "../lib/InicioSesion.svelte";
-    import Registrarse from '../lib/Registrarse.svelte';
+  //Importacion del logo de la empresa
+  import PLADAU from "../img/PLADAU.png";
+
+  //Importacion de Router, Link, Route para la navegación
+
+  import { Router, Link, Route } from "svelte-routing";
+
+  import Inicio from "../lib/Inicio.svelte";
+  import Nosotros from "../lib/Nosotros.svelte"; //Esto son las variables para la navegación
+  import Facultades from "../lib/Facultades.svelte";
+  import InicioSesion from "../lib/InicioSesion.svelte";
 </script>
 
 <header>
-  <nav>
-    <div>
-      <img src={PLADAU} alt="Logo de la empresa PLADAU">
-    </div>
-    <ul id="menu">
-      <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Inicio</a></li>
-      <li><a href="/" on:click|preventDefault={() => (menu = 2)} >Nosotros</a></li>
-      <li><a href="/" on:click|preventDefault={() => (menu = 3)} >Facultades</a></li>
-      <li><a href="/" on:click|preventDefault={() => (menu = 4)} >Inicio Sesión</a></li>
-      <li><a href="/" on:click|preventDefault={() => (menu = 5)} >Resgistrarse</a></li>
-    </ul>
-  </nav>
+  <Router>
+    <nav>
+      <div>
+        <img src={PLADAU} alt="Logo de la empresa PLADAU" />
+      </div>
+      <Link
+        class="botones-link"
+        style="color:white;
+        color: #fff; /* Cambia el color del texto */
+        text-decoration: none; /* Quita el subrayado */
+        padding: 10px; /* Espacio alrededor del texto */
+        transition: color 0.3s; /* Efecto de transición al cambiar de color */
+      "
+        to="/Inicio">Inicio</Link
+      >
+      <Link class="botones-link" 
+        style="color:white;
+        color: #fff; /* Cambia el color del texto */
+        text-decoration: none; /* Quita el subrayado */
+        padding: 10px; /* Espacio alrededor del texto */
+        transition: color 0.3s; /* Efecto de transición al cambiar de color */"
+
+        to="/Nosotros">Nosotros</Link>
+      <Link class="botones-link" 
+        style="color:white;
+        color: #fff; /* Cambia el color del texto */
+        text-decoration: none; /* Quita el subrayado */
+        padding: 10px; /* Espacio alrededor del texto */
+        transition: color 0.3s; /* Efecto de transición al cambiar de color */"
+
+      
+        to="/Facultades">Facultades</Link>
+      <Link class="botones-link" 
+        style="color:white;
+        color: #fff; /* Cambia el color del texto */
+        text-decoration: none; /* Quita el subrayado */
+        padding: 10px; /* Espacio alrededor del texto */
+        transition: color 0.3s; /* Efecto de transición al cambiar de color */
+        "
+      
+        to="/InicioSesion">Inicio Sesion</Link>
+    </nav>
+    <!-- Código para la navegación de rutas en Svelte -->
+    <Route path="/Inicio" component={Inicio} />
+    <Route path="/Nosotros" component={Nosotros} />
+    <Route path="/Facultades" component={Facultades} />
+    <Route path="InicioSesion" component={InicioSesion} />
+  </Router>
 </header>
 
-
-<!--?Codigo para el NavBar-->
-{#if menu === 1}
-  <Inicio />
-{:else if menu === 2}
-  <Nosotros />
-{:else if menu === 3}
-  <Facultades />
-{:else if menu === 4}
-  <InicioSesion />
-{:else if menu === 5}
-  <Registrarse />
-{/if}
-
-
-
-
-
 <style>
-  header{
+  header {
     width: 100%;
-    height: 6rem;
-    background-color:#6E98D8;
+    height: 5em;
+    background-color: #6e98d8;
   }
-  
-  nav{
+
+  nav {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-  }
-  
-  /*CAJA DEL LOGO*/
-  nav div{
-    margin-left: 2%;
-  }
-  
-  
-  #menu {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    gap:1%;
-    margin-right: 3%;
-  }
-  
-  #menu li{
-    list-style: none;
-  }
-
-  #menu li:nth-child(5){
-    background-color: white; 
-    border-radius: 0.3em;
-    padding:0.2rem;
-  }
-
-
-  #menu li:nth-child(5) a{ /**nth-child, solo funciona con hijos directos de su padre (en este caso ul)*/
-    color: black;
-  }
-
-  #menu li:nth-child(5) a:hover{
-    background-color: black;
-    color: white;
-    width: 100%;
-  }
-
-  
-  #menu li a{
+    justify-content: space-between;
+    padding: 0em 2em 0em 2em;
     font-family: kodchasan;
-    text-decoration:none;
-    color: white;
-    padding: 0.2rem;
-    font-size: 120%;
-    font-weight: 700;
-
   }
 
-  #menu li:not(:nth-child(5)) a:hover {
-    background-color: green;
-    border-radius: 0.3em;
-  }
+  /* nav .botones-link {
+        color: #fff; /* Cambia el color del texto */
+  /* text-decoration: none; /* Quita el subrayado */
+  /* padding: 10px; /* Espacio alrededor del texto */
+  /* transition: color 0.3s; Efecto de transición al cambiar de color */
+  /* } */
 
+  /* nav .botones-link:hover {
+        color: #ffcc00; Cambia el color al pasar el mouse */
+  /* } */
 </style>

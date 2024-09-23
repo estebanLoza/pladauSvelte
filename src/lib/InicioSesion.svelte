@@ -9,35 +9,39 @@
     import IconoApple from "../img/appleicon(company) 1.png";
 
 
-</script>
 
+    //Navegación de rutas para UsuInicio.svelte con incio de sesión
+    import { Link, navigate } from "svelte-routing";
+    function irAUsuInicio() {
+    navigate("/InicioUsuario"); // Navega a la ruta deseada
+  }
+</script>
 
 
 <main> 
     <div class="TituloYImagen">
         <h1>INICIO DE SESIÓN</h1>
-
     </div>
 
     <figure>
         <img src={IconoInicio} alt="ICONO DE FOTO DE INICIO">
     </figure>
 
-    <form>
+    <form on:submit|preventDefault={irAUsuInicio}>
         <div class="contenedorInfo">
             <label for="text">Username</label>
             <input type="text" id="usuario">
         </div>
 
-        <div class="contenedorInfo caja2" >
+        <div class="contenedorInfo caja2">
             <label for="password">Password</label>
             <input type="password" id="password">
         </div>
         
-        <div class="contenedorInfo cajaBoton" >
-            <label for="submit">
-                <input type="submit" value="INICIAR SESIÓN">
-            </label>
+        <div class="contenedorInfo cajaBoton">
+            <button type="button" on:click={irAUsuInicio} class="boton-estilo">
+                INICIAR SESIÓN
+            </button>
         </div>
     </form>
 
@@ -48,17 +52,9 @@
     </div>
 
     <div id="OpcionInicioSesion">
-        <a href=".">Inicia sesión con tu organización</a>
+        <Link class="link-estilo" to="/InicioUsuario">Inicia sesión con tu organización</Link>
     </div>
-
-      
-        
-      
-
-
 </main>
-
-
 
 
 
@@ -141,7 +137,7 @@
         margin-top: 2rem;
     }
 
-    #OpcionInicioSesion a{
+    #OpcionInicioSesion .link-estilo{
         color:#29A000;
         font-size: 1.4rem;
         font-family: bold;
