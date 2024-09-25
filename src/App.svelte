@@ -1,24 +1,33 @@
 <script>
-  // import svelteLogo from './assets/svelte.svg';
-  // import viteLogo from '/vite.svg';
-  import Footer from "./Components/footer.svelte";
   import Navbar from "./Components/Navbar.svelte";
-  import InicioDos from "./lib/InicioDos.svelte";
 
-  import "../src/app.css";
 </script>
+
 
 <div class="layout">
   <Navbar />
+
   <main>
     <slot />
   </main>
-  <Footer />
+
+  <footer>
+    <p>este es un componente footer</p>
+  </footer>
 </div>
 
+
 <style>
-  .layout{
-    display: grid;
-    grid-template-columns: 1fr auto;
-    }
+
+  main{
+    display: flex;
+    flex-direction: column;  
+    min-height: 100vh;
+  }
+  footer{
+    background-color: green;
+
+  }
+
+
 </style>

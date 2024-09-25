@@ -5,13 +5,6 @@
   //Importacion de Router, Link, Route para la navegación
   import { Router, Link, Route } from "svelte-routing";
 
-  
-  import Nosotros from "../lib/Nosotros.svelte"; //Esto son las variables para la navegación
-  import Facultades from "../lib/Facultades.svelte";
-  import InicioSesion from "../lib/InicioSesion.svelte";
-  import Registrarse from "../lib/Registrarse.svelte";
-  import Inicio from "../lib/InicioDos.svelte";
-  
 </script>
 
 <header>
@@ -29,11 +22,11 @@
       </div>
     </nav>
     <!-- Código para la navegación de rutas en Svelte -->
-    <Route path="/Inicio" component={Inicio} />
+    <!-- <Route path="/Inicio" component={Inicio} />
     <Route path="/Nosotros" component={Nosotros} />
     <Route path="/Facultades" component={Facultades} />
     <Route path="InicioSesion" component={InicioSesion} />
-    <Route path="/Registrarse" component={Registrarse} />
+    <Route path="/Registrarse" component={Registrarse} /> -->
   </Router>
 </header>
 
