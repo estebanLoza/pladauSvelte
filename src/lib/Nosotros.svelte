@@ -1,10 +1,10 @@
 <script>
-    import FachadaFime from  "../img/fime-fachada.png";
+    import FachadaFime from  "../../public/img/fime-fachada.png";
 </script>
 
 
 
-<h1>Hola mundo</h1>
+<h1>Hola Nosotros</h1>
 
 
 

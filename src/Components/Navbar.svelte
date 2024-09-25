@@ -1,15 +1,17 @@
 <script>
   //Importacion del logo de la empresa
-  import PLADAU from "../img/PLADAU.png";
+  import PLADAU from "../../public/img/PLADAU.png";
 
   //Importacion de Router, Link, Route para la navegación
-
   import { Router, Link, Route } from "svelte-routing";
 
-  import Inicio from "../lib/Inicio.svelte";
+  
   import Nosotros from "../lib/Nosotros.svelte"; //Esto son las variables para la navegación
   import Facultades from "../lib/Facultades.svelte";
   import InicioSesion from "../lib/InicioSesion.svelte";
+  import Registrarse from "../lib/Registrarse.svelte";
+  import Inicio from "../lib/InicioDos.svelte";
+  
 </script>
 
 <header>
@@ -18,48 +20,20 @@
       <div>
         <img src={PLADAU} alt="Logo de la empresa PLADAU" />
       </div>
-      <Link
-        class="botones-link"
-        style="color:white;
-        color: #fff; /* Cambia el color del texto */
-        text-decoration: none; /* Quita el subrayado */
-        padding: 10px; /* Espacio alrededor del texto */
-        transition: color 0.3s; /* Efecto de transición al cambiar de color */
-      "
-        to="/Inicio">Inicio</Link
-      >
-      <Link class="botones-link" 
-        style="color:white;
-        color: #fff; /* Cambia el color del texto */
-        text-decoration: none; /* Quita el subrayado */
-        padding: 10px; /* Espacio alrededor del texto */
-        transition: color 0.3s; /* Efecto de transición al cambiar de color */"
-
-        to="/Nosotros">Nosotros</Link>
-      <Link class="botones-link" 
-        style="color:white;
-        color: #fff; /* Cambia el color del texto */
-        text-decoration: none; /* Quita el subrayado */
-        padding: 10px; /* Espacio alrededor del texto */
-        transition: color 0.3s; /* Efecto de transición al cambiar de color */"
-
-      
-        to="/Facultades">Facultades</Link>
-      <Link class="botones-link" 
-        style="color:white;
-        color: #fff; /* Cambia el color del texto */
-        text-decoration: none; /* Quita el subrayado */
-        padding: 10px; /* Espacio alrededor del texto */
-        transition: color 0.3s; /* Efecto de transición al cambiar de color */
-        "
-      
-        to="/InicioSesion">Inicio Sesion</Link>
+      <div class="nav-link">
+        <Link class="botoneslink" to="/Inicio">Inicio</Link>
+        <Link class="botoneslink" to="/Nosotros">Nosotros</Link>
+        <Link class="botoneslink" to="/Facultades">Facultades</Link>
+        <Link class="botoneslink" to="/InicioSesion">Inicio Sesion</Link>
+        <Link class="botoneslink" to="/Registrarse">Registarse</Link>
+      </div>
     </nav>
     <!-- Código para la navegación de rutas en Svelte -->
     <Route path="/Inicio" component={Inicio} />
     <Route path="/Nosotros" component={Nosotros} />
     <Route path="/Facultades" component={Facultades} />
     <Route path="InicioSesion" component={InicioSesion} />
+    <Route path="/Registrarse" component={Registrarse} />
   </Router>
 </header>
 
@@ -80,14 +54,49 @@
     font-family: kodchasan;
   }
 
-  /* nav .botones-link {
-        color: #fff; /* Cambia el color del texto */
-  /* text-decoration: none; /* Quita el subrayado */
-  /* padding: 10px; /* Espacio alrededor del texto */
-  /* transition: color 0.3s; Efecto de transición al cambiar de color */
-  /* } */
 
-  /* nav .botones-link:hover {
-        color: #ffcc00; Cambia el color al pasar el mouse */
-  /* } */
+.nav-link{
+    display:inline-flex;
+    color: white;
+    gap:1.5em;
+  }  
+
+
+  :global(.botoneslink){  /*Al componentes de svelte se tiene que agregar con global, paar que funcione (lo estoy haciendo esta página con svelte+vite) */
+    color: white;
+    font-family: kodchasan;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 0.3em;
+  }
+
+
+  :global(.botoneslink:hover:not(:nth-child(5))){ /*Esto indica que el ultimo componente no usará el background-color en verde**/
+    background-color:rgb(50, 211, 50);
+    border-radius: 8%;
+  }
+
+  
+
+  :global(.botoneslink:nth-child(5)){
+    background-color: white;
+    color: black;
+    border-radius: 8%;
+  } 
+
+  :global(.botoneslink:nth-child(5):hover){
+    background-color: rgb(131, 231, 100);
+    color: rgb(255, 253, 253);
+  }
+
+
+
+
+
+
+
+
+
+
 </style>
