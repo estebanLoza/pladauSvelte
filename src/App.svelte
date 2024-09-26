@@ -1,5 +1,6 @@
 <script>
   import Navbar from "./Components/Navbar.svelte";
+  import logo from "../public/img/PLADAU.png";
 
 </script>
 
@@ -9,25 +10,14 @@
 
   <main>
     <slot />
+   
   </main>
 
-  <footer>
-    <p>este es un componente footer</p>
-  </footer>
+
 </div>
 
 
 <style>
-
-  main{
-    display: flex;
-    flex-direction: column;  
-    min-height: 100vh;
-  }
-  footer{
-    background-color: green;
-
-  }
 
 
 </style>

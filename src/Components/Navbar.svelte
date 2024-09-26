@@ -4,7 +4,8 @@
 
   //Importacion de Router, Link, Route para la navegación
   import { Router, Link, Route } from "svelte-routing";
-
+  import Inicio from "../lib/Inicio.svelte";
+  import Nosotros from "../lib/Nosotros.svelte";
 </script>
 
 <header>
@@ -16,17 +17,17 @@
       <div class="nav-link">
         <Link class="botoneslink" to="/Inicio">Inicio</Link>
         <Link class="botoneslink" to="/Nosotros">Nosotros</Link>
-        <Link class="botoneslink" to="/Facultades">Facultades</Link>
+        <!-- <Link class="botoneslink" to="/Facultades">Facultades</Link>
         <Link class="botoneslink" to="/InicioSesion">Inicio Sesion</Link>
-        <Link class="botoneslink" to="/Registrarse">Registarse</Link>
+        <Link class="botoneslink" to="/Registrarse">Registarse</Link> -->
       </div>
     </nav>
     <!-- Código para la navegación de rutas en Svelte -->
-    <!-- <Route path="/Inicio" component={Inicio} />
+    <Route path="/Inicio" component={Inicio} />
     <Route path="/Nosotros" component={Nosotros} />
-    <Route path="/Facultades" component={Facultades} />
-    <Route path="InicioSesion" component={InicioSesion} />
-    <Route path="/Registrarse" component={Registrarse} /> -->
+    <!-- <Route path="/Facultades" component={Facultades} /> -->
+    <!-- <Route path="InicioSesion" component={InicioSesion} /> -->
+    <!-- <Route path="/Registrarse" component={Registrarse} /> -->
   </Router>
 </header>
 
